@@ -20,8 +20,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square3" translatesAutoresizingMaskIntoConstraints="NO" id="yR0-ga-8ib">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xju-eU-EIz">
-                                <rect key="frame" x="128" y="174" width="158" height="274"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="duckup3" translatesAutoresizingMaskIntoConstraints="NO" id="xju-eU-EIz">
+                                <rect key="frame" x="72" y="128" width="219" height="318"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="IH7-T9-y70" appends="YES" id="ThQ-U2-85K"/>
@@ -48,6 +48,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="duckup3" width="284" height="488"/>
         <image name="square3" width="624" height="624"/>
     </resources>
 </document>

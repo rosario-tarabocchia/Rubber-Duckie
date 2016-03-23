@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longPressOutlet;
 @property (strong, nonatomic) UIImage *duckImage;
 @property (assign, nonatomic) NSUInteger animationNumber;
+@property (assign, nonatomic) NSUInteger animateWobbleNumber;
 @property (assign, nonatomic) BOOL touchDownOnImageView;
 @property (assign, nonatomic) BOOL touchCancelOnImageView;
 
@@ -80,7 +81,7 @@
     NSString *imageName = [NSString stringWithFormat:@"duck%lu", imageNumber];
     self.duckImage = [UIImage imageNamed:imageName];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [UIView transitionWithView:self.duckImageView duration:.2 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
             
@@ -231,10 +232,81 @@
     
     if (self.animationNumber == 0 && self.touchCancelOnImageView == YES) {
         
-        self.touchCancelOnImageView = NO;
+        self.animateWobbleNumber = 0;
+        
+        [self wobble];
     }
     
 
+    
+}
+
+-(void)animateWobble {
+    
+//    NSUInteger imageNumber = self.animateWobbleNumber + 1;
+//    NSString *imageName = [NSString stringWithFormat:@"duckup%lu", imageNumber];
+//    self.duckImage = [UIImage imageNamed:imageName];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [UIView transitionWithView:self.duckImageView duration:.1 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            
+            NSLog(@"Gettin to animate WOBBLE?");
+            
+            [self.duckImageView setImage:self.duckImage];
+            
+        } completion:^(BOOL finished) {
+            
+            self.animateWobbleNumber += 1;
+            
+            [self wobble];
+            
+        }];
+        
+    });
+    
+}
+
+-(void)wobble {
+    
+    NSLog(@"%lu", self.animateWobbleNumber);
+    
+    if (self.animateWobbleNumber == 0 && self.touchCancelOnImageView == YES) {
+        
+        self.duckImage = [UIImage imageNamed:@"duckup3"];
+        
+        [self animateWobble];
+    }
+    
+    if (self.animateWobbleNumber == 1 && self.touchCancelOnImageView == YES) {
+        
+        self.duckImage = [UIImage imageNamed:@"duckup1"];
+        
+        [self animateWobble];
+    }
+    
+    if (self.animateWobbleNumber == 2 && self.touchCancelOnImageView == YES) {
+        
+        self.duckImage = [UIImage imageNamed:@"duckup3"];
+        
+        [self animateWobble];
+    }
+    
+    if (self.animateWobbleNumber == 3 && self.touchCancelOnImageView == YES) {
+        
+        
+        self.duckImage = [UIImage imageNamed:@"duck0"];
+
+        
+        [self animateWobble];
+    }
+    
+    if (self.animateWobbleNumber == 4 && self.touchCancelOnImageView == YES) {
+        
+        self.touchCancelOnImageView = NO;
+    }
+    
+    
     
 }
 

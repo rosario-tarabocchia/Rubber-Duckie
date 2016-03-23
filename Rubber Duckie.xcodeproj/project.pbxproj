@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		732CE7D81CA2BEDD00AC9AA0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 732CE7D71CA2BEDD00AC9AA0 /* main.m */; };
+		732CE7DB1CA2BEDD00AC9AA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 732CE7DA1CA2BEDD00AC9AA0 /* AppDelegate.m */; };
+		732CE7DE1CA2BEDD00AC9AA0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732CE7DD1CA2BEDD00AC9AA0 /* ViewController.m */; };
+		732CE7E11CA2BEDD00AC9AA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 732CE7DF1CA2BEDD00AC9AA0 /* Main.storyboard */; };
+		732CE7E41CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 732CE7E21CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodeld */; };
+		732CE7E61CA2BEDD00AC9AA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732CE7E51CA2BEDD00AC9AA0 /* Assets.xcassets */; };
+		732CE7E91CA2BEDD00AC9AA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 732CE7E71CA2BEDD00AC9AA0 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		732CE7D31CA2BEDD00AC9AA0 /* Rubber Duckie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rubber Duckie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		732CE7D71CA2BEDD00AC9AA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		732CE7D91CA2BEDD00AC9AA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		732CE7DA1CA2BEDD00AC9AA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		732CE7DC1CA2BEDD00AC9AA0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		732CE7DD1CA2BEDD00AC9AA0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		732CE7E01CA2BEDD00AC9AA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		732CE7E31CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rubber_Duckie.xcdatamodel; sourceTree = "<group>"; };
+		732CE7E51CA2BEDD00AC9AA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		732CE7E81CA2BEDD00AC9AA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		732CE7EA1CA2BEDD00AC9AA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		732CE7D01CA2BEDD00AC9AA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		732CE7CA1CA2BEDD00AC9AA0 = {
+			isa = PBXGroup;
+			children = (
+				732CE7D51CA2BEDD00AC9AA0 /* Rubber Duckie */,
+				732CE7D41CA2BEDD00AC9AA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		732CE7D41CA2BEDD00AC9AA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				732CE7D31CA2BEDD00AC9AA0 /* Rubber Duckie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		732CE7D51CA2BEDD00AC9AA0 /* Rubber Duckie */ = {
+			isa = PBXGroup;
+			children = (
+				732CE7D91CA2BEDD00AC9AA0 /* AppDelegate.h */,
+				732CE7DA1CA2BEDD00AC9AA0 /* AppDelegate.m */,
+				732CE7DC1CA2BEDD00AC9AA0 /* ViewController.h */,
+				732CE7DD1CA2BEDD00AC9AA0 /* ViewController.m */,
+				732CE7DF1CA2BEDD00AC9AA0 /* Main.storyboard */,
+				732CE7E51CA2BEDD00AC9AA0 /* Assets.xcassets */,
+				732CE7E71CA2BEDD00AC9AA0 /* LaunchScreen.storyboard */,
+				732CE7EA1CA2BEDD00AC9AA0 /* Info.plist */,
+				732CE7E21CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodeld */,
+				732CE7D61CA2BEDD00AC9AA0 /* Supporting Files */,
+			);
+			path = "Rubber Duckie";
+			sourceTree = "<group>";
+		};
+		732CE7D61CA2BEDD00AC9AA0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				732CE7D71CA2BEDD00AC9AA0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		732CE7D21CA2BEDD00AC9AA0 /* Rubber Duckie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 732CE7ED1CA2BEDD00AC9AA0 /* Build configuration list for PBXNativeTarget "Rubber Duckie" */;
+			buildPhases = (
+				732CE7CF1CA2BEDD00AC9AA0 /* Sources */,
+				732CE7D01CA2BEDD00AC9AA0 /* Frameworks */,
+				732CE7D11CA2BEDD00AC9AA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rubber Duckie";
+			productName = "Rubber Duckie";
+			productReference = 732CE7D31CA2BEDD00AC9AA0 /* Rubber Duckie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		732CE7CB1CA2BEDD00AC9AA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = RLDT;
+				TargetAttributes = {
+					732CE7D21CA2BEDD00AC9AA0 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 732CE7CE1CA2BEDD00AC9AA0 /* Build configuration list for PBXProject "Rubber Duckie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 732CE7CA1CA2BEDD00AC9AA0;
+			productRefGroup = 732CE7D41CA2BEDD00AC9AA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				732CE7D21CA2BEDD00AC9AA0 /* Rubber Duckie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		732CE7D11CA2BEDD00AC9AA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732CE7E91CA2BEDD00AC9AA0 /* LaunchScreen.storyboard in Resources */,
+				732CE7E61CA2BEDD00AC9AA0 /* Assets.xcassets in Resources */,
+				732CE7E11CA2BEDD00AC9AA0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		732CE7CF1CA2BEDD00AC9AA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				732CE7E41CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodeld in Sources */,
+				732CE7DE1CA2BEDD00AC9AA0 /* ViewController.m in Sources */,
+				732CE7DB1CA2BEDD00AC9AA0 /* AppDelegate.m in Sources */,
+				732CE7D81CA2BEDD00AC9AA0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		732CE7DF1CA2BEDD00AC9AA0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				732CE7E01CA2BEDD00AC9AA0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		732CE7E71CA2BEDD00AC9AA0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				732CE7E81CA2BEDD00AC9AA0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		732CE7EB1CA2BEDD00AC9AA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		732CE7EC1CA2BEDD00AC9AA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		732CE7EE1CA2BEDD00AC9AA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Rubber Duckie/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RLDT.Rubber-Duckie";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		732CE7EF1CA2BEDD00AC9AA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Rubber Duckie/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RLDT.Rubber-Duckie";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		732CE7CE1CA2BEDD00AC9AA0 /* Build configuration list for PBXProject "Rubber Duckie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732CE7EB1CA2BEDD00AC9AA0 /* Debug */,
+				732CE7EC1CA2BEDD00AC9AA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		732CE7ED1CA2BEDD00AC9AA0 /* Build configuration list for PBXNativeTarget "Rubber Duckie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732CE7EE1CA2BEDD00AC9AA0 /* Debug */,
+				732CE7EF1CA2BEDD00AC9AA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		732CE7E21CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				732CE7E31CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodel */,
+			);
+			currentVersion = 732CE7E31CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodel */;
+			path = Rubber_Duckie.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 732CE7CB1CA2BEDD00AC9AA0 /* Project object */;
+}

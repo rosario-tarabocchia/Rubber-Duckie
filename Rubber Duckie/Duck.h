@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Duck.h
 //  Rubber Duckie
 //
 //  Created by Rosario Tarabocchia on 3/23/16.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreMotion/CoreMotion.h>
 
-@interface ViewController : UIViewController
-
+@interface Duck : UIImageView
 
 @end
-

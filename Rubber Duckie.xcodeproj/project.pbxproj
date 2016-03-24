@@ -14,6 +14,7 @@
 		732CE7E41CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 732CE7E21CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodeld */; };
 		732CE7E61CA2BEDD00AC9AA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732CE7E51CA2BEDD00AC9AA0 /* Assets.xcassets */; };
 		732CE7E91CA2BEDD00AC9AA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 732CE7E71CA2BEDD00AC9AA0 /* LaunchScreen.storyboard */; };
+		736633051CA3717600F9F4E9 /* Duck.m in Sources */ = {isa = PBXBuildFile; fileRef = 736633041CA3717600F9F4E9 /* Duck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		732CE7E51CA2BEDD00AC9AA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		732CE7E81CA2BEDD00AC9AA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		732CE7EA1CA2BEDD00AC9AA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		736633031CA3717600F9F4E9 /* Duck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Duck.h; sourceTree = "<group>"; };
+		736633041CA3717600F9F4E9 /* Duck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Duck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 				732CE7DA1CA2BEDD00AC9AA0 /* AppDelegate.m */,
 				732CE7DC1CA2BEDD00AC9AA0 /* ViewController.h */,
 				732CE7DD1CA2BEDD00AC9AA0 /* ViewController.m */,
+				736633031CA3717600F9F4E9 /* Duck.h */,
+				736633041CA3717600F9F4E9 /* Duck.m */,
 				732CE7DF1CA2BEDD00AC9AA0 /* Main.storyboard */,
 				732CE7E51CA2BEDD00AC9AA0 /* Assets.xcassets */,
 				732CE7E71CA2BEDD00AC9AA0 /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				736633051CA3717600F9F4E9 /* Duck.m in Sources */,
 				732CE7E41CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodeld in Sources */,
 				732CE7DE1CA2BEDD00AC9AA0 /* ViewController.m in Sources */,
 				732CE7DB1CA2BEDD00AC9AA0 /* AppDelegate.m in Sources */,
@@ -304,6 +310,7 @@
 				732CE7EF1CA2BEDD00AC9AA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

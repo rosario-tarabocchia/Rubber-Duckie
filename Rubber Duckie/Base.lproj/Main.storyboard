@@ -14,14 +14,15 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square3" translatesAutoresizingMaskIntoConstraints="NO" id="yR0-ga-8ib">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="water" translatesAutoresizingMaskIntoConstraints="NO" id="yR0-ga-8ib">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <gestureRecognizers/>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="duckup3" translatesAutoresizingMaskIntoConstraints="NO" id="xju-eU-EIz">
-                                <rect key="frame" x="72" y="128" width="219" height="318"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="duckup3" translatesAutoresizingMaskIntoConstraints="NO" id="xju-eU-EIz" customClass="Duck">
+                                <rect key="frame" x="116" y="214" width="107" height="140"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="IH7-T9-y70" appends="YES" id="ThQ-U2-85K"/>
@@ -30,13 +31,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="duckImageView" destination="xju-eU-EIz" id="ivQ-OF-gdI"/>
                         <outlet property="longPressOutlet" destination="IH7-T9-y70" id="duW-Qn-5Xg"/>
+                        <outlet property="panGesture" destination="Zga-tU-M8K" id="eYq-PJ-6Id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Zga-tU-M8K">
+                    <connections>
+                        <action selector="fingerMoving:" destination="BYZ-38-t0r" id="hTL-e9-aD4"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="P0Z-Ia-BYY"/>
+                    </connections>
+                </panGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.10000000000000001" id="IH7-T9-y70">
                     <connections>
                         <action selector="longPressAction:" destination="BYZ-38-t0r" id="ZF7-U4-zid"/>
@@ -49,6 +58,6 @@
     </scenes>
     <resources>
         <image name="duckup3" width="284" height="488"/>
-        <image name="square3" width="624" height="624"/>
+        <image name="water" width="1954" height="1064"/>
     </resources>
 </document>

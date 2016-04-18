@@ -22,26 +22,23 @@
 @property (assign, nonatomic) BOOL touchCancelOnImageView;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 @property (strong, nonatomic) UIDynamicItemBehavior *duckBehaviors;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic) UIAttachmentBehavior *attachmentBehavior;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
 @property (strong, nonatomic) UIPushBehavior *pushBehavior;
-
 @property (nonatomic) CGFloat xDuckFloat;
 @property (nonatomic) CGFloat yDuckFloat;
 @property (nonatomic) UICollisionBehavior *collisionThing;
-
 @property (nonatomic) UIGravityBehavior *gravity;
 @property (nonatomic) CMMotionManager *motionManager;
 @property (nonatomic) NSOperationQueue *motionQueue;
-
 @property (strong, nonatomic) IBOutlet UIImageView *imageView2;
-
 @property (nonatomic, assign) CGRect originalBounds;
 @property (nonatomic, assign) CGPoint originalCenter;
-
 @property (strong, nonatomic) IBOutlet UIImageView *waterWaves2View;
 @property (strong, nonatomic) IBOutlet UIImageView *waterWaves1View;
+@property (strong, nonatomic) IBOutlet Duck *shadow;
+@property (strong, nonatomic) IBOutlet UIImageView *water;
+@property (strong, nonatomic) IBOutlet UIImageView *ovalwater;
 
 @end
 
@@ -67,10 +64,16 @@
     
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
+    NSLog(@"%@", self.duckImageView);
+    
+    NSLog(@"Getting here before crash");
+    
     
     self.collisionThing = [[UICollisionBehavior alloc] initWithItems:@[self.duckImageView]];
-   
     
+    NSLog(@"%@", self.collisionThing);
+   
+    NSLog(@"Getting here");
     
     self.collisionThing.translatesReferenceBoundsIntoBoundary = YES;
 
@@ -79,9 +82,16 @@
     
     [self.animator addBehavior:self.collisionThing];
     
+    UICollisionBehavior *shadowBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.shadow]];
+    shadowBehavior.collisionMode = UICollisionBehaviorModeEverything;
+    shadowBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    
+    [self.animator addBehavior:self.collisionThing];
+    [self.animator addBehavior:shadowBehavior];
     
     
-    self.duckBehaviors = [[UIDynamicItemBehavior alloc]initWithItems:@[self.duckImageView]];
+    
+    self.duckBehaviors = [[UIDynamicItemBehavior alloc]initWithItems:@[self.duckImageView, self.shadow]];
     self.duckBehaviors.density = .7;
     self.duckBehaviors.elasticity = .3;
     self.duckBehaviors.resistance = .7;
@@ -90,29 +100,54 @@
     self.duckBehaviors.allowsRotation = YES;
     [self.animator addBehavior:self.duckBehaviors];
     
-    UIDynamicItemBehavior *resistanceBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.duckImageView]];
+    UIDynamicItemBehavior *resistanceBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.duckImageView, self.shadow]];
     resistanceBehavior.resistance = 1.0;
     [self.animator addBehavior:resistanceBehavior];
     
     
     [self.collisionThing addBoundaryWithIdentifier:@"wall"
-                          fromPoint:CGPointMake(15,15)
-                            toPoint:CGPointMake(self.view.bounds.size.width - 15,
-                                                15)];
+                          fromPoint:CGPointMake(40,40)
+                            toPoint:CGPointMake(self.view.bounds.size.width - 40,
+                                                40)];
     
     [self.collisionThing addBoundaryWithIdentifier:@"wall1"
-                                         fromPoint:CGPointMake(15,15)
-                                           toPoint:CGPointMake(15,
-                                                               self.view.bounds.size.height - 15)];
+                                         fromPoint:CGPointMake(40,40)
+                                           toPoint:CGPointMake(40,
+                                                               self.view.bounds.size.height - 40)];
     
     [self.collisionThing addBoundaryWithIdentifier:@"wall2"
-                                         fromPoint:CGPointMake(15,
-                                                               self.view.bounds.size.height - 15)
-                                           toPoint:CGPointMake(self.view.bounds.size.width - 15, self.view.bounds.size.height - 15)];
+                                         fromPoint:CGPointMake(40,
+                                                               self.view.bounds.size.height - 40)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 40, self.view.bounds.size.height - 40)];
     
     [self.collisionThing addBoundaryWithIdentifier:@"wall2"
-                                         fromPoint:CGPointMake(self.view.bounds.size.width - 15, 15)
-                                           toPoint:CGPointMake(self.view.bounds.size.width - 15, self.view.bounds.size.height - 15)];
+                                         fromPoint:CGPointMake(self.view.bounds.size.width - 40, 40)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 40, self.view.bounds.size.height - 40)];
+    
+    
+    [shadowBehavior addBoundaryWithIdentifier:@"wall"
+                                         fromPoint:CGPointMake(40,40)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 40,
+                                                               40)];
+    
+    [shadowBehavior addBoundaryWithIdentifier:@"wall1"
+                                         fromPoint:CGPointMake(40,40)
+                                           toPoint:CGPointMake(40,
+                                                               self.view.bounds.size.height - 40)];
+    
+    [shadowBehavior addBoundaryWithIdentifier:@"wall2"
+                                         fromPoint:CGPointMake(40,
+                                                               self.view.bounds.size.height - 40)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 40, self.view.bounds.size.height - 40)];
+    
+    [shadowBehavior addBoundaryWithIdentifier:@"wall2"
+                                         fromPoint:CGPointMake(self.view.bounds.size.width - 40, 40)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 40, self.view.bounds.size.height - 40)];
+    
+    UIAttachmentBehavior *attach = [[UIAttachmentBehavior alloc] initWithItem:self.shadow attachedToItem:self.duckImageView];
+    attach.damping = 0;
+    attach.frequency = 0;
+    [self.animator addBehavior:attach];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -121,6 +156,8 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:YES];
     
     [UIView animateKeyframesWithDuration:10.0 delay:0.0 options:UIViewKeyframeAnimationOptionAutoreverse | UIViewKeyframeAnimationOptionRepeat animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:5 animations:^{
@@ -196,62 +233,44 @@
 
 -(void)pushDownOnImage {
     
-    NSLog(@"Getting here to PUSHDOWNIMAGE");
     
     if (self.animationNumber == 0 && self.touchCancelOnImageView == NO) {
-        
-        NSLog(@"Getting here to PUSHDOWNIMAGE 0");
         
         [self animateSinking];
     }
     
     if (self.animationNumber == 1 && self.touchCancelOnImageView == NO) {
         
-        NSLog(@"Getting here to PUSHDOWNIMAGE 1");
-        
         [self animateSinking];
     }
     
     if (self.animationNumber == 2 && self.touchCancelOnImageView == NO) {
-
-        NSLog(@"Getting here to PUSHDOWNIMAGE 2");
         
         [self animateSinking];
     }
     
     if (self.animationNumber == 3 && self.touchCancelOnImageView == NO) {
         
-        NSLog(@"Getting here to PUSHDOWNIMAGE 3");
-        
         [self animateSinking];
     }
     
     if (self.animationNumber == 4 && self.touchCancelOnImageView == NO) {
-        
-        NSLog(@"Getting here to PUSHDOWNIMAGE 4");
         
         [self animateSinking];
     }
     
     if (self.animationNumber == 5 && self.touchCancelOnImageView == NO) {
         
-        NSLog(@"Getting here to PUSHDOWNIMAGE 5");
-        
         [self animateSinking];
     }
     
     if (self.animationNumber == 6 && self.touchCancelOnImageView == NO) {
         
-        NSLog(@"Getting here to PUSHDOWNIMAGE 6");
-        
         [self animateSinking];
     }
     
     if (self.animationNumber == 7 && self.touchCancelOnImageView == NO) {
-        
-        NSLog(@"Getting here to PUSHDOWNIMAGE 7");
-        
-        
+
         self.touchCancelOnImageView = YES;
     }
     
@@ -264,11 +283,7 @@
     NSString *imageName = [NSString stringWithFormat:@"duck%lu", imageNumber];
     self.duckImage = [UIImage imageNamed:imageName];
     
-
-    
-        [UIView transitionWithView:self.duckImageView duration:.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-            
-            NSLog(@"Gettin to animate RISING?");
+    [UIView transitionWithView:self.duckImageView duration:.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
             
             [self.duckImageView setImage:self.duckImage];
             
@@ -279,14 +294,9 @@
             [self imageLetGo];
             
         }];
-        
-
-    
 }
 
 -(void)imageLetGo {
-    
-    NSLog(@"Getting here");
     
     if (self.animationNumber == 7 && self.touchCancelOnImageView == YES) {
         
@@ -330,21 +340,13 @@
         [self wobble];
     }
     
-
-    
 }
 
 -(void)animateWobble {
     
-//    NSUInteger imageNumber = self.animateWobbleNumber + 1;
-//    NSString *imageName = [NSString stringWithFormat:@"duckup%lu", imageNumber];
-//    self.duckImage = [UIImage imageNamed:imageName];
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [UIView transitionWithView:self.duckImageView duration:.2 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-            
-            NSLog(@"Gettin to animate WOBBLE?");
             
             [self.duckImageView setImage:self.duckImage];
             
@@ -361,8 +363,6 @@
 }
 
 -(void)wobble {
-    
-    NSLog(@"%lu", self.animateWobbleNumber);
     
     if (self.animateWobbleNumber == 0 && self.touchCancelOnImageView == YES) {
         
@@ -387,10 +387,8 @@
     
     if (self.animateWobbleNumber == 3 && self.touchCancelOnImageView == YES) {
         
-        
         self.duckImage = [UIImage imageNamed:@"duck0"];
 
-        
         [self animateWobble];
     }
     
@@ -398,8 +396,6 @@
         
         self.touchCancelOnImageView = NO;
     }
-    
-    
     
 }
 
@@ -420,29 +416,16 @@
 
         }
             
-        
         case UIGestureRecognizerStateEnded: {
 
-
-            
             break;
         }
             
-            
-
-        
         default:
 
             break;
+    
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
 
@@ -454,13 +437,27 @@
     self.pushBehavior.angle = angle;
     [self.animator addBehavior:self.pushBehavior];
     
+}
 
+- (IBAction)drainButton:(id)sender {
+    
+    
+    [UIView transitionWithView:self.water duration:7 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        
+        [self.water setAlpha:0];
+        
+    } completion:^(BOOL finished) {
+        [UIView transitionWithView:self.ovalwater duration:7.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            [self.ovalwater setAlpha:0];
+        
+        } completion:nil];
+
+        
+    }];
     
 }
 
-- (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender {
 
-}
 
 
 @end

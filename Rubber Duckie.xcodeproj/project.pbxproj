@@ -16,6 +16,7 @@
 		732CE7E91CA2BEDD00AC9AA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 732CE7E71CA2BEDD00AC9AA0 /* LaunchScreen.storyboard */; };
 		736633051CA3717600F9F4E9 /* Duck.m in Sources */ = {isa = PBXBuildFile; fileRef = 736633041CA3717600F9F4E9 /* Duck.m */; };
 		73745E7E1CC5192A006A2CE5 /* RPTIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73745E7D1CC5192A006A2CE5 /* RPTIntroViewController.m */; };
+		7387B86E1CC6759000979F4B /* RPTDuckDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7387B86D1CC6759000979F4B /* RPTDuckDataStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		736633041CA3717600F9F4E9 /* Duck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Duck.m; sourceTree = "<group>"; };
 		73745E7C1CC5192A006A2CE5 /* RPTIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RPTIntroViewController.h; path = ../RPTIntroViewController.h; sourceTree = "<group>"; };
 		73745E7D1CC5192A006A2CE5 /* RPTIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPTIntroViewController.m; path = ../RPTIntroViewController.m; sourceTree = "<group>"; };
+		7387B86C1CC6759000979F4B /* RPTDuckDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPTDuckDataStore.h; sourceTree = "<group>"; };
+		7387B86D1CC6759000979F4B /* RPTDuckDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPTDuckDataStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				732CE7DD1CA2BEDD00AC9AA0 /* ViewController.m */,
 				736633031CA3717600F9F4E9 /* Duck.h */,
 				736633041CA3717600F9F4E9 /* Duck.m */,
+				7387B86C1CC6759000979F4B /* RPTDuckDataStore.h */,
+				7387B86D1CC6759000979F4B /* RPTDuckDataStore.m */,
 				73745E7C1CC5192A006A2CE5 /* RPTIntroViewController.h */,
 				73745E7D1CC5192A006A2CE5 /* RPTIntroViewController.m */,
 				732CE7DF1CA2BEDD00AC9AA0 /* Main.storyboard */,
@@ -167,6 +172,7 @@
 				732CE7E41CA2BEDD00AC9AA0 /* Rubber_Duckie.xcdatamodeld in Sources */,
 				73745E7E1CC5192A006A2CE5 /* RPTIntroViewController.m in Sources */,
 				732CE7DE1CA2BEDD00AC9AA0 /* ViewController.m in Sources */,
+				7387B86E1CC6759000979F4B /* RPTDuckDataStore.m in Sources */,
 				732CE7DB1CA2BEDD00AC9AA0 /* AppDelegate.m in Sources */,
 				732CE7D81CA2BEDD00AC9AA0 /* main.m in Sources */,
 			);

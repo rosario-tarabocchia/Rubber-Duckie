@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Duck.h"
+#import "RPTDuckDataStore.h"
 
 
 @interface ViewController () <UIGestureRecognizerDelegate, UICollisionBehaviorDelegate>
@@ -39,6 +40,7 @@
 @property (strong, nonatomic) IBOutlet Duck *shadow;
 @property (strong, nonatomic) IBOutlet UIImageView *water;
 @property (strong, nonatomic) IBOutlet UIImageView *ovalwater;
+@property (strong, nonatomic) RPTDuckDataStore *dataStore;
 
 @end
 
@@ -49,6 +51,10 @@
     
 //    self.duckImageView.clipsToBounds = YES;
     
+    self.dataStore = [RPTDuckDataStore sharedDataStore];
+    
+    NSLog(@"%@", self.dataStore.duckColor);
+    
     self.originalBounds = self.view.bounds;
     self.originalCenter = self.view.center;
     self.longPressOutlet = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressAction:)];
@@ -57,7 +63,13 @@
     self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(fingerMoving:)];
     [self.duckImageView addGestureRecognizer:self.panGesture];
     
-    self.duckImage = [UIImage imageNamed:@"duck0"];
+    NSString *duckColor = [NSString stringWithFormat:@"%@Duck0", self.dataStore.duckColor];
+    
+    self.duckImage = [UIImage imageNamed:duckColor];
+    
+    NSLog(@"%@", self.dataStore.duckColor);
+    NSLog(@"%@", duckColor);
+    
     [self.duckImageView setImage:self.duckImage];
     
     self.animationNumber = 0;
@@ -67,6 +79,8 @@
     NSLog(@"%@", self.duckImageView);
     
     NSLog(@"Getting here before crash");
+    
+    NSLog(@"%@", self.dataStore.duckColor);
     
     
     self.collisionThing = [[UICollisionBehavior alloc] initWithItems:@[self.duckImageView]];
@@ -162,10 +176,10 @@
     [UIView animateKeyframesWithDuration:10.0 delay:0.0 options:UIViewKeyframeAnimationOptionAutoreverse | UIViewKeyframeAnimationOptionRepeat animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:5 animations:^{
             self.waterWaves1View.alpha = 0;
-            self.waterWaves2View.alpha = 1;
+            self.waterWaves2View.alpha = .5;
         }];
-        [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:7.5 animations:^{
-            self.waterWaves1View.alpha = 1;
+        [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:5 animations:^{
+            self.waterWaves1View.alpha = .5;
             self.waterWaves2View.alpha = 0;
         }];
     } completion:nil];
@@ -209,7 +223,9 @@
 -(void)animateSinking {
     
     NSUInteger imageNumber = self.animationNumber + 1;
-    NSString *imageName = [NSString stringWithFormat:@"duck%lu", imageNumber];
+    NSString *imageName = [NSString stringWithFormat:@"%@Duck%lu", self.dataStore.duckColor, imageNumber];
+    
+//    NSString *imageName = @"testwater2";
     self.duckImage = [UIImage imageNamed:imageName];
 
     
@@ -218,6 +234,8 @@
             NSLog(@"Getting to Animate SINKING?");
             
             [self.duckImageView setImage:self.duckImage];
+            
+
             
         } completion:^(BOOL finished) {
             
@@ -280,7 +298,9 @@
 -(void)animateRising {
     
     NSUInteger imageNumber = self.animationNumber - 1;
-    NSString *imageName = [NSString stringWithFormat:@"duck%lu", imageNumber];
+    NSString *imageName = [NSString stringWithFormat:@"%@Duck%lu", self.dataStore.duckColor, imageNumber];
+    
+//    NSString *imageName = @"testwater2";
     self.duckImage = [UIImage imageNamed:imageName];
     
     [UIView transitionWithView:self.duckImageView duration:.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
@@ -364,30 +384,32 @@
 
 -(void)wobble {
     
+    NSString *imageName = [NSString stringWithFormat:@"%@Duck", self.dataStore.duckColor];
+    
     if (self.animateWobbleNumber == 0 && self.touchCancelOnImageView == YES) {
         
-        self.duckImage = [UIImage imageNamed:@"testBig"];
+        self.duckImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@A", imageName]];
         
         [self animateWobble];
     }
     
     if (self.animateWobbleNumber == 1 && self.touchCancelOnImageView == YES) {
         
-        self.duckImage = [UIImage imageNamed:@"testduck1"];
+        self.duckImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@B", imageName]];
         
         [self animateWobble];
     }
     
     if (self.animateWobbleNumber == 2 && self.touchCancelOnImageView == YES) {
         
-        self.duckImage = [UIImage imageNamed:@"testduck3"];
+        self.duckImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@A", imageName]];
         
         [self animateWobble];
     }
     
     if (self.animateWobbleNumber == 3 && self.touchCancelOnImageView == YES) {
         
-        self.duckImage = [UIImage imageNamed:@"duck0"];
+        self.duckImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@0", imageName]];
 
         [self animateWobble];
     }

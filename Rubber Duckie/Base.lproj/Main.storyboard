@@ -17,38 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emptyTub" translatesAutoresizingMaskIntoConstraints="NO" id="yR0-ga-8ib">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="et1" translatesAutoresizingMaskIntoConstraints="NO" id="yR0-ga-8ib">
                                 <rect key="frame" x="-1" y="0.0" width="415" height="736"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ovalWater" translatesAutoresizingMaskIntoConstraints="NO" id="7az-xA-WZ2">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7az-xA-WZ2">
                                 <rect key="frame" x="-1" y="0.0" width="415" height="736"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="water" translatesAutoresizingMaskIntoConstraints="NO" id="ITE-dq-uXD">
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ITE-dq-uXD">
                                 <rect key="frame" x="-1" y="0.0" width="415" height="736"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Wu-pL-eNc">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waves2" translatesAutoresizingMaskIntoConstraints="NO" id="8Wu-pL-eNc">
                                 <rect key="frame" x="0.0" y="0.0" width="415" height="736"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5s-mW-Vog">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waves1" translatesAutoresizingMaskIntoConstraints="NO" id="v5s-mW-Vog">
                                 <rect key="frame" x="-6" y="-8" width="415" height="752"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shadow" translatesAutoresizingMaskIntoConstraints="NO" id="r8W-cN-jH6" customClass="Duck">
+                            <imageView alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shadow" translatesAutoresizingMaskIntoConstraints="NO" id="r8W-cN-jH6" customClass="Duck">
                                 <rect key="frame" x="213" y="265" width="44" height="49"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="duck0" translatesAutoresizingMaskIntoConstraints="NO" id="xju-eU-EIz" customClass="Duck">
-                                <rect key="frame" x="182" y="205" width="107" height="140"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xju-eU-EIz" customClass="Duck">
+                                <rect key="frame" x="161" y="258" width="107" height="140"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="IH7-T9-y70" appends="YES" id="ThQ-U2-85K"/>
                                 </connections>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faucet-1" translatesAutoresizingMaskIntoConstraints="NO" id="dMY-jq-hG6">
-                                <rect key="frame" x="175" y="631" width="63" height="97"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ys-Dn-8w2">
                                 <rect key="frame" x="183" y="631" width="46" height="97"/>
@@ -56,6 +53,9 @@
                                     <action selector="drainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sSf-io-R7h"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faucet-1" translatesAutoresizingMaskIntoConstraints="NO" id="dMY-jq-hG6">
+                                <rect key="frame" x="175" y="631" width="63" height="97"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="27" y="71"/>
         </scene>
-        <!--View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="Lf6-Ue-Lhz">
             <objects>
-                <viewController id="5xA-gK-Q3o" customClass="RPTViewController" sceneMemberID="viewController">
+                <viewController id="5xA-gK-Q3o" customClass="RPTIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="whi-zI-nwU"/>
                         <viewControllerLayoutGuide type="bottom" id="cgK-tc-6MF"/>
@@ -110,7 +110,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pick a duck." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOY-Wb-DON">
                                 <rect key="frame" x="225" y="550" width="151" height="30"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K5s-3w-feU">
@@ -126,6 +126,9 @@
                                                     <constraint firstAttribute="width" constant="81" id="at2-we-V9k"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="orangeDuck"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="orangeDuck" id="elQ-vQ-cpy"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00i-7q-BcI">
                                                 <rect key="frame" x="91" y="0.0" width="81" height="140"/>
@@ -145,6 +148,9 @@
                                                     <constraint firstAttribute="height" constant="140" id="uhY-gp-dmw"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="greenDuck"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="greenDuck" id="wAe-2n-5vL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -158,6 +164,9 @@
                                                     <constraint firstAttribute="width" constant="81" id="NI6-H6-ewX"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="purpleDuck"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="purpleDuck" id="v0k-fV-mRV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0L-TP-pJ2">
                                                 <rect key="frame" x="91" y="0.0" width="81" height="140"/>
@@ -166,6 +175,9 @@
                                                     <constraint firstAttribute="width" constant="81" id="cfw-dH-dCS"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="redDuck"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="redDuck" id="Kpn-uk-IlM"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -189,17 +201,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="duck0" width="283" height="488"/>
-        <image name="emptyTub" width="366" height="686"/>
+        <image name="et1" width="366" height="686"/>
         <image name="faucet-1" width="74" height="130"/>
         <image name="greenDuck" width="504" height="896"/>
         <image name="logo" width="1020" height="335"/>
         <image name="orangeDuck" width="504" height="896"/>
-        <image name="ovalWater" width="307" height="591"/>
         <image name="purpleDuck" width="504" height="896"/>
         <image name="redDuck" width="504" height="896"/>
         <image name="shadow" width="125" height="125"/>
-        <image name="water" width="325" height="645"/>
+        <image name="waves1" width="337" height="658"/>
+        <image name="waves2" width="337" height="658"/>
         <image name="yellowDuck" width="504" height="896"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="v0k-fV-mRV"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -39,21 +39,27 @@
     
     if ([segue.identifier isEqualToString:@"redDuck"]) {
         self.dataStore.duckColor = @"red";
+        self.dataStore.duckNumber = 0;
     }
     
     if ([segue.identifier isEqualToString:@"yellowDuck"]) {
         self.dataStore.duckColor = @"yellow";
+        self.dataStore.duckNumber = 1;
     }
    
     if ([segue.identifier isEqualToString:@"orangeDuck"]) {
         self.dataStore.duckColor = @"orange";
+        self.dataStore.duckNumber = 2;
     }
     
     if ([segue.identifier isEqualToString:@"greenDuck"]) {
         self.dataStore.duckColor = @"green";
+        self.dataStore.duckNumber = 3;
+        
     }
     if ([segue.identifier isEqualToString:@"purpleDuck"]) {
         self.dataStore.duckColor = @"purple";
+        self.dataStore.duckNumber = 4;
     }
 
 }

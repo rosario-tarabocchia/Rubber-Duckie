@@ -41,6 +41,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *water;
 @property (strong, nonatomic) IBOutlet UIImageView *ovalwater;
 @property (strong, nonatomic) RPTDuckDataStore *dataStore;
+@property (weak, nonatomic) IBOutlet UIButton *drainButton;
 
 @end
 
@@ -198,6 +199,8 @@
         self.touchCancelOnImageView = NO;
         
         [self pushDownOnImage];
+        
+        [self.drainButton setEnabled:NO];
 
         
         
@@ -213,6 +216,8 @@
             self.touchCancelOnImageView = YES;
             
             [self imageLetGo];
+            
+            [self.drainButton setEnabled:NO];
             
             
             
@@ -290,6 +295,7 @@
     if (self.animationNumber == 7 && self.touchCancelOnImageView == NO) {
 
         self.touchCancelOnImageView = YES;
+        [self.drainButton setEnabled:YES];
     }
     
 }
@@ -417,6 +423,7 @@
     if (self.animateWobbleNumber == 4 && self.touchCancelOnImageView == YES) {
         
         self.touchCancelOnImageView = NO;
+        [self.drainButton setEnabled:YES];
     }
     
 }
@@ -464,18 +471,42 @@
 - (IBAction)drainButton:(id)sender {
     
     
-    [UIView transitionWithView:self.water duration:7 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+//    [UIView transitionWithView:self.water duration:7 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+//        
+//        [self.water setAlpha:0];
+//        
+//    } completion:^(BOOL finished) {
+//        [UIView transitionWithView:self.ovalwater duration:7.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+//            [self.ovalwater setAlpha:0];
+//        
+//        } completion:nil];
+//
+//        
+//    }];
+    
+    if (self.dataStore.duckNumber == 4) {
+        self.dataStore.duckNumber = 0;
+    }
+    
+    else {
+       
+        self.dataStore.duckNumber = self.dataStore.duckNumber + 1;
         
-        [self.water setAlpha:0];
-        
-    } completion:^(BOOL finished) {
-        [UIView transitionWithView:self.ovalwater duration:7.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-            [self.ovalwater setAlpha:0];
-        
-        } completion:nil];
-
-        
-    }];
+    }
+    
+    self.dataStore.duckColor = self.dataStore.duckColorDictionary[@(self.dataStore.duckNumber)];
+    
+    
+    NSString *duckColor = [NSString stringWithFormat:@"%@Duck0", self.dataStore.duckColor];
+    
+    self.duckImage = [UIImage imageNamed:duckColor];
+//
+    NSLog(@"%@", self.dataStore.duckColor);
+    NSLog(@"%@", duckColor);
+    
+    [self.duckImageView setImage:self.duckImage];
+    
+    
     
 }
 

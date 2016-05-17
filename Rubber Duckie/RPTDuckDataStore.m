@@ -28,6 +28,7 @@
     if (self) {
         
         _duckColor = [NSString new];
+        _duckColorDictionary = @{@0:@"red", @1:@"yellow", @2:@"orange", @3:@"green", @4 : @"purple"};
         
     }
     

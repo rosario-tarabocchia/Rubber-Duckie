@@ -12,7 +12,8 @@
 
 + (instancetype)sharedDataStore;
 
-@property (strong, nonatomic) NSArray *duckColorArray;
+@property (strong, nonatomic) NSDictionary *duckColorDictionary;
 @property (strong, nonatomic) NSString *duckColor;
+@property (assign, nonatomic) NSUInteger duckNumber;
 
 @end

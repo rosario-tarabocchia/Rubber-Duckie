@@ -38,10 +38,12 @@
 @property (strong, nonatomic) IBOutlet UIImageView *waterWaves2View;
 @property (strong, nonatomic) IBOutlet UIImageView *waterWaves1View;
 @property (strong, nonatomic) IBOutlet Duck *shadow;
-@property (strong, nonatomic) IBOutlet UIImageView *water;
+@property (strong, nonatomic) IBOutlet UIImageView *tub
+;
 @property (strong, nonatomic) IBOutlet UIImageView *ovalwater;
 @property (strong, nonatomic) RPTDuckDataStore *dataStore;
 @property (weak, nonatomic) IBOutlet UIButton *drainButton;
+@property (assign, nonatomic) NSUInteger wallNumber;
 
 @end
 
@@ -55,6 +57,8 @@
     self.dataStore = [RPTDuckDataStore sharedDataStore];
     
     NSLog(@"%@", self.dataStore.duckColor);
+    
+    [self checkScreenSize];
     
     self.originalBounds = self.view.bounds;
     self.originalCenter = self.view.center;
@@ -121,43 +125,43 @@
     
     
     [self.collisionThing addBoundaryWithIdentifier:@"wall"
-                          fromPoint:CGPointMake(40,40)
-                            toPoint:CGPointMake(self.view.bounds.size.width - 40,
-                                                40)];
+                          fromPoint:CGPointMake(30,30)
+                            toPoint:CGPointMake(self.view.bounds.size.width - 30,
+                                                30)];
     
     [self.collisionThing addBoundaryWithIdentifier:@"wall1"
-                                         fromPoint:CGPointMake(40,40)
-                                           toPoint:CGPointMake(40,
-                                                               self.view.bounds.size.height - 40)];
+                                         fromPoint:CGPointMake(30,30)
+                                           toPoint:CGPointMake(30,
+                                                               self.view.bounds.size.height - 30)];
     
     [self.collisionThing addBoundaryWithIdentifier:@"wall2"
-                                         fromPoint:CGPointMake(40,
-                                                               self.view.bounds.size.height - 40)
-                                           toPoint:CGPointMake(self.view.bounds.size.width - 40, self.view.bounds.size.height - 40)];
+                                         fromPoint:CGPointMake(30,
+                                                               self.view.bounds.size.height - 30)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 30, self.view.bounds.size.height - 30)];
     
     [self.collisionThing addBoundaryWithIdentifier:@"wall2"
-                                         fromPoint:CGPointMake(self.view.bounds.size.width - 40, 40)
-                                           toPoint:CGPointMake(self.view.bounds.size.width - 40, self.view.bounds.size.height - 40)];
+                                         fromPoint:CGPointMake(self.view.bounds.size.width - 30, 30)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 30, self.view.bounds.size.height - 30)];
     
     
     [shadowBehavior addBoundaryWithIdentifier:@"wall"
-                                         fromPoint:CGPointMake(40,40)
-                                           toPoint:CGPointMake(self.view.bounds.size.width - 40,
-                                                               40)];
+                                         fromPoint:CGPointMake(30,30)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 30,
+                                                               30)];
     
     [shadowBehavior addBoundaryWithIdentifier:@"wall1"
-                                         fromPoint:CGPointMake(40,40)
-                                           toPoint:CGPointMake(40,
-                                                               self.view.bounds.size.height - 40)];
+                                         fromPoint:CGPointMake(30,30)
+                                           toPoint:CGPointMake(30,
+                                                               self.view.bounds.size.height - 30)];
     
     [shadowBehavior addBoundaryWithIdentifier:@"wall2"
-                                         fromPoint:CGPointMake(40,
-                                                               self.view.bounds.size.height - 40)
-                                           toPoint:CGPointMake(self.view.bounds.size.width - 40, self.view.bounds.size.height - 40)];
+                                         fromPoint:CGPointMake(30,
+                                                               self.view.bounds.size.height - 30)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 30, self.view.bounds.size.height - 30)];
     
     [shadowBehavior addBoundaryWithIdentifier:@"wall2"
-                                         fromPoint:CGPointMake(self.view.bounds.size.width - 40, 40)
-                                           toPoint:CGPointMake(self.view.bounds.size.width - 40, self.view.bounds.size.height - 40)];
+                                         fromPoint:CGPointMake(self.view.bounds.size.width - 30, 30)
+                                           toPoint:CGPointMake(self.view.bounds.size.width - 30, self.view.bounds.size.height - 30)];
     
     UIAttachmentBehavior *attach = [[UIAttachmentBehavior alloc] initWithItem:self.shadow attachedToItem:self.duckImageView];
     attach.damping = 0;
@@ -505,6 +509,52 @@
     NSLog(@"%@", duckColor);
     
     [self.duckImageView setImage:self.duckImage];
+    
+    
+    
+}
+
+-(void)checkScreenSize {
+    
+
+    
+    if (self.view.frame.size.height < 500) {
+        
+        self.tub.image = [UIImage imageNamed:@"bottomTub4Sx1"];
+        self.waterWaves1View.image = [UIImage imageNamed:@"water4sx1"];
+        self.waterWaves2View.image = [UIImage imageNamed:@"water4sx1"];
+        
+    }
+    
+    else if (self.view.frame.size.height < 600) {
+        
+        self.tub.image = [UIImage imageNamed:@"bottomTub5x2"];
+        self.waterWaves1View.image = [UIImage imageNamed:@"water5x2"];
+        self.waterWaves2View.image = [UIImage imageNamed:@"water5x2"];
+        
+        
+    }
+    
+    else if (self.view.frame.size.height < 700) {
+        
+        self.tub.image = [UIImage imageNamed:@"bottomTub6x2"];
+        self.waterWaves1View.image = [UIImage imageNamed:@"water6x2"];
+        self.waterWaves2View.image = [UIImage imageNamed:@"water6x2"];
+        
+        
+        
+    }
+    
+    else {
+        
+        self.tub.image = [UIImage imageNamed:@"bottomTub6Plusx3"];
+        self.waterWaves1View.image = [UIImage imageNamed:@"water6Plusx3"];
+        self.waterWaves2View.image = [UIImage imageNamed:@"water6Plusx3"];
+        
+        
+        
+    }
+    
     
     
     

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Duck.h"
 #import "RPTDuckDataStore.h"
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface ViewController () <UIGestureRecognizerDelegate, UICollisionBehaviorDelegate>
@@ -44,6 +45,9 @@
 @property (strong, nonatomic) RPTDuckDataStore *dataStore;
 @property (weak, nonatomic) IBOutlet UIButton *drainButton;
 @property (assign, nonatomic) NSUInteger wallNumber;
+@property (strong, nonatomic) NSURL *sounds;
+@property (nonatomic) AVAudioPlayer *audioPlayer;
+
 
 @end
 
@@ -53,6 +57,10 @@
     [super viewDidLoad];
     
 //    self.duckImageView.clipsToBounds = YES;
+    
+//    self.sounds = [[NSBundle mainBundle] URLForResource:@"Duckquack5" withExtension:@"mp3"];
+//    
+//    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:self.sounds error:nil];
     
     self.dataStore = [RPTDuckDataStore sharedDataStore];
     
@@ -198,7 +206,7 @@
     
     {
         
-        NSLog(@"TOUCH PRESSED AND %lu", self.animationNumber);
+        NSLog(@"TOUCH PRESSED AND %lu", (unsigned long)self.animationNumber);
         
         self.touchCancelOnImageView = NO;
         
@@ -215,7 +223,7 @@
     {
         if (recognizer.state == UIGestureRecognizerStateCancelled || recognizer.state == UIGestureRecognizerStateFailed || recognizer.state == UIGestureRecognizerStateEnded)
         {
-            NSLog(@"TOUCH CANCELED AND %lu", self.animationNumber);
+            NSLog(@"TOUCH CANCELED AND %lu", (unsigned long)self.animationNumber);
             
             self.touchCancelOnImageView = YES;
             
@@ -232,7 +240,7 @@
 -(void)animateSinking {
     
     NSUInteger imageNumber = self.animationNumber + 1;
-    NSString *imageName = [NSString stringWithFormat:@"%@Duck%lu", self.dataStore.duckColor, imageNumber];
+    NSString *imageName = [NSString stringWithFormat:@"%@Duck%lu", self.dataStore.duckColor, (unsigned long)imageNumber];
     
 //    NSString *imageName = @"testwater2";
     self.duckImage = [UIImage imageNamed:imageName];
@@ -299,7 +307,7 @@
     if (self.animationNumber == 7 && self.touchCancelOnImageView == NO) {
 
         self.touchCancelOnImageView = YES;
-        [self.drainButton setEnabled:YES];
+//        [self.drainButton setEnabled:YES];
     }
     
 }
@@ -308,7 +316,7 @@
 -(void)animateRising {
     
     NSUInteger imageNumber = self.animationNumber - 1;
-    NSString *imageName = [NSString stringWithFormat:@"%@Duck%lu", self.dataStore.duckColor, imageNumber];
+    NSString *imageName = [NSString stringWithFormat:@"%@Duck%lu", self.dataStore.duckColor, (unsigned long)imageNumber];
     
 //    NSString *imageName = @"testwater2";
     self.duckImage = [UIImage imageNamed:imageName];
@@ -425,6 +433,9 @@
     }
     
     if (self.animateWobbleNumber == 4 && self.touchCancelOnImageView == YES) {
+        
+
+//        [self.audioPlayer play];
         
         self.touchCancelOnImageView = NO;
         [self.drainButton setEnabled:YES];
@@ -560,6 +571,10 @@
     
 }
 
+- (IBAction)backButtonAction:(id)sender {
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 
 
 
